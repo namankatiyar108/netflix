@@ -1,13 +1,19 @@
 import React, { useState, useRef } from 'react'
 import Header from './Header'
 import { validateData } from '../utils/Validate';
-import {  createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
+import { updateProfile } from "firebase/auth";
 import { auth } from '../utils/Firebase';
+import { useDispatch } from 'react-redux';
+import { addUser } from '../utils/userSlice';
+import { NetBackLogo } from '../utils/Constatnts';
 
 function Login() {
 
     const [isSignInForm, setIsSignInForm] = useState(true);
     const [errorMessage, setErrorMessage] = useState(null);
+
+    const dispatch = useDispatch();
 
     const name = useRef(null);
     const email = useRef(null);
@@ -32,9 +38,21 @@ function Login() {
             password.current.value
           )
             .then((userCredential) => {
-              // Signed up
               const user = userCredential.user;
-              console.log(user);
+
+              updateProfile(auth.currentUser, {
+                displayName: name.current.value,
+                //photoURL: "https://example.com/jane-q-user/profile.jpg",
+              })
+                .then(() => {
+
+                  const {uid, email, displayName} = auth.currentUser;
+                  dispatch(addUser({uid: uid, email: email, displayName: displayName}));
+                })
+                .catch((error) => {
+                  setErrorMessage(error.message);
+                });
+
               // ...
             })
             .catch((error) => {
@@ -49,8 +67,7 @@ function Login() {
             .then((userCredential) => {
               // Signed in
               const user = userCredential.user;
-              console.log(user);
-              // ...
+
             })
             .catch((error) => {
               const errorCode = error.code;
@@ -65,7 +82,7 @@ function Login() {
     <div>
         <Header />
         <div className='absolute'>
-            <img src='https://assets.nflxext.com/ffe/siteui/vlv3/ff5587c5-1052-47cf-974b-a97e3b4f0656/065df910-dec3-46ae-afa8-7ad2b52dce40/IN-en-20240506-popsignuptwoweeks-perspective_alpha_website_large.jpg' />
+            <img src={NetBackLogo} />
         </div>
         <form onSubmit={(e) => e.preventDefault()} 
 

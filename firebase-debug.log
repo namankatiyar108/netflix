@@ -1,0 +1,78 @@
+[debug] [2024-05-15T08:59:29.407Z] ----------------------------------------------------------------------
+[debug] [2024-05-15T08:59:29.410Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\7\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting
+[debug] [2024-05-15T08:59:29.410Z] CLI Version:   13.8.3
+[debug] [2024-05-15T08:59:29.411Z] Platform:      win32
+[debug] [2024-05-15T08:59:29.411Z] Node Version:  v18.16.1
+[debug] [2024-05-15T08:59:29.417Z] Time:          Wed May 15 2024 14:29:29 GMT+0530 (India Standard Time)
+[debug] [2024-05-15T08:59:29.417Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-05-15T08:59:29.568Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-15T08:59:29.569Z] > authorizing via signed-in user (namankatiyar111@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Namaste React\netflix
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-05-15T08:59:47.336Z] Using project from CLI flag: netflix-c6dfc
+[debug] [2024-05-15T08:59:47.339Z] > refreshing access token with scopes: []
+[debug] [2024-05-15T08:59:47.342Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-05-15T08:59:47.342Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-05-15T09:00:08.677Z] *** [apiv2] error from fetch(https://www.googleapis.com/oauth2/v3/token, {"headers":{},"method":"POST","body":{"_overheadLength":545,"_valueLength":212,"_valuesToMeasure":[],"writable":false,"readable":true,"dataSize":0,"maxDataSize":2097152,"pauseStreams":true,"_released":true,"_streams":[],"_currentStream":null,"_insideLoop":false,"_pendingNext":false,"_boundary":"--------------------------662914833908127525281694","_events":{},"_eventsCount":1}}): FetchError: request to https://www.googleapis.com/oauth2/v3/token failed, reason: connect ETIMEDOUT 2404:6800:4007:824::200a:443
+[debug] [2024-05-15T09:00:08.678Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2024-05-15T09:00:13.691Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\7\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:267:49)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-05-15T09:03:56.629Z] ----------------------------------------------------------------------
+[debug] [2024-05-15T09:03:56.632Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\7\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-05-15T09:03:56.632Z] CLI Version:   13.8.3
+[debug] [2024-05-15T09:03:56.633Z] Platform:      win32
+[debug] [2024-05-15T09:03:56.633Z] Node Version:  v18.16.1
+[debug] [2024-05-15T09:03:56.634Z] Time:          Wed May 15 2024 14:33:56 GMT+0530 (India Standard Time)
+[debug] [2024-05-15T09:03:56.635Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-05-15T09:03:56.773Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-15T09:03:56.774Z] > authorizing via signed-in user (namankatiyar111@gmail.com)
+[debug] [2024-05-15T09:03:56.775Z] [iam] checking project netflix-c6dfc for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-05-15T09:03:56.777Z] > refreshing access token with scopes: []
+[debug] [2024-05-15T09:03:56.780Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-05-15T09:03:56.780Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-05-15T09:04:18.090Z] *** [apiv2] error from fetch(https://www.googleapis.com/oauth2/v3/token, {"headers":{},"method":"POST","body":{"_overheadLength":545,"_valueLength":212,"_valuesToMeasure":[],"writable":false,"readable":true,"dataSize":0,"maxDataSize":2097152,"pauseStreams":true,"_released":true,"_streams":[],"_currentStream":null,"_insideLoop":false,"_pendingNext":false,"_boundary":"--------------------------374124238421702740176574","_events":{},"_eventsCount":1}}): FetchError: request to https://www.googleapis.com/oauth2/v3/token failed, reason: connect ETIMEDOUT 2404:6800:4007:81e::200a:443
+[debug] [2024-05-15T09:04:18.091Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2024-05-15T09:04:18.092Z] > refreshing access token with scopes: []
+[debug] [2024-05-15T09:04:18.093Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-05-15T09:04:18.093Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-05-15T09:04:39.149Z] *** [apiv2] error from fetch(https://www.googleapis.com/oauth2/v3/token, {"headers":{},"method":"POST","body":{"_overheadLength":545,"_valueLength":212,"_valuesToMeasure":[],"writable":false,"readable":true,"dataSize":0,"maxDataSize":2097152,"pauseStreams":true,"_released":true,"_streams":[],"_currentStream":null,"_insideLoop":false,"_pendingNext":false,"_boundary":"--------------------------709299591880364069095579","_events":{},"_eventsCount":1}}): FetchError: request to https://www.googleapis.com/oauth2/v3/token failed, reason: connect ETIMEDOUT 2404:6800:4007:81e::200a:443
+[debug] [2024-05-15T09:04:39.149Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2024-05-15T09:04:44.164Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\7\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:267:49)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+[error] 
+[error] Error: An unexpected error has occurred.
